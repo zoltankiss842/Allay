@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".questionsActivity"
+    android:background="@drawable/gradient_main">
+
+    <TextView
+        android:id="@+id/sixMonths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="In the last 6 months, have you experienced any of the following symptoms?"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112" />
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sixMonths"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:gravity="right"
+        android:paddingRight="@dimen/fab_margin"
+        android:layout_height="329dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionText"
+        app:layout_constraintVertical_bias="0.349">
+
+        <RadioButton
+            android:id="@+id/never"
+            android:layoutDirection="rtl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:padding="@dimen/fab_margin"
+            android:text="Never"
+            android:textSize="20sp">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/fewTimes"
+            android:layoutDirection="rtl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fab_margin"
+            android:text="A few times"
+            android:textSize="20sp">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/sometimes"
+            android:layout_width="wrap_content"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fab_margin"
+            android:text="Sometimes"
+            android:textSize="20sp">
+
+        </RadioButton>
+
+
+        <RadioButton
+            android:id="@+id/often"
+            android:layout_width="wrap_content"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fab_margin"
+            android:text="Often"
+            android:textSize="20sp">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/constantly"
+            android:layout_width="wrap_content"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/fab_margin"
+            android:text="Constantly"
+            android:textSize="20sp">
+
+        </RadioButton>
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

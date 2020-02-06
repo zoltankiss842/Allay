@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_main"
+    tools:context=".professionalContact">
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/elizabeth"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/woman"
+        app:civ_border_color="#191970"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#696969"
+        app:civ_shadow_radius="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/emma"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/woman3"
+        app:civ_border_color="#191970"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#696969"
+        app:civ_shadow_radius="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toEndOf="@+id/harold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/harold"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:src="@drawable/harold"
+        app:civ_border_color="#191970"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#696969"
+        app:civ_shadow_radius="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/josh"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/man"
+        app:civ_border_color="#191970"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#696969"
+        app:civ_shadow_radius="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/elizabeth"
+        app:layout_constraintStart_toEndOf="@+id/anna"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/anna"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/woman2"
+        app:civ_border_color="#191970"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#696969"
+        app:civ_shadow_radius="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:padding="@dimen/fab_margin"
+        android:gravity="center"
+        android:text="Unfortunately, no one available at the moment"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

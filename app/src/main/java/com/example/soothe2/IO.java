@@ -35,8 +35,6 @@ public class IO {
     public void saveData(String fileName, File path, String key, String text, boolean append) throws Exception {
         try{
 
-            // TODO Have to remove # on key and text
-
             File file = new File(path, fileName);
             FileWriter fw = new FileWriter(file.getAbsoluteFile(), append);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -83,5 +81,15 @@ public class IO {
 
         }
 
+    }
+
+    public boolean containsIllegalChars(String word){
+        for(int i = 0; i < word.length(); ++i){
+            if(word.charAt(i) == '#'){
+               return true;
+            }
+        }
+
+        return false;
     }
 }

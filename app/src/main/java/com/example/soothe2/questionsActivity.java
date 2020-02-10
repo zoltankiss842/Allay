@@ -39,13 +39,13 @@ public class questionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
-        questionText = (TextView) findViewById(R.id.questionText);
+        questionText = findViewById(R.id.questionText);
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup = findViewById(R.id.radioGroup);
 
-        showNexQuestion();
+        showNextQuestion();
 
-        nextBtn = (Button) findViewById(R.id.button);
+        nextBtn = findViewById(R.id.button);
 
         if(nextQ == questions.length){
             nextBtn.setText("Finish");
@@ -55,13 +55,13 @@ public class questionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startSavingData(true);
-                showNexQuestion();
+                showNextQuestion();
             }
         });
 
     }
 
-    private void showNexQuestion() {
+    private void showNextQuestion() {
 
         if(nextQ < questions.length){
             questionText.setText(questions[nextQ]);

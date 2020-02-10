@@ -26,6 +26,16 @@ public class personalInformation extends AppCompatActivity {
     MainActivity main = new MainActivity();
     HashMap<String, String> user_data;
 
+    private EditText yourNameEdit;
+    private EditText dateEdit;
+
+    private Spinner genderSpin;
+    private Spinner pronounSpin;
+
+    private EditText genderSpecify;
+
+    private Button nextBtn2;
+
 
     private String[] genderIdentity = new String[]{
             "Male (including transgender men)",
@@ -58,31 +68,31 @@ public class personalInformation extends AppCompatActivity {
         Intent intent = getIntent();
         user_data = (HashMap<String, String>)intent.getSerializableExtra("map");
 
-        EditText yourNameEdit = (EditText) findViewById(R.id.yourNameEdit);
+        yourNameEdit = findViewById(R.id.yourNameEdit);
         yourNameEdit.setText(user_data.get("name"));
 
-        final EditText dateEdit = (EditText) findViewById(R.id.dateEdit);
+        dateEdit = findViewById(R.id.dateEdit);
         dateEdit.setText(user_data.get("month") + "/" +
                 user_data.get("day") + "/" +
                 user_data.get("year"));
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, genderIdentity);
-        final Spinner genderSpin = (Spinner) findViewById(R.id.genderSpin);
+        genderSpin = findViewById(R.id.genderSpin);
         genderSpin.setAdapter(adapter);
         genderSpin.setSelection(Integer.parseInt(user_data.get("gender")));
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, genderPronouns);
-        final Spinner pronounSpin = (Spinner) findViewById(R.id.pronounSpin);
+        pronounSpin = findViewById(R.id.pronounSpin);
         pronounSpin.setAdapter(adapter2);
         pronounSpin.setSelection(Integer.parseInt(user_data.get("pronoun")));
 
-        EditText genderSpecify = (EditText) findViewById(R.id.genderSpecify);
+        genderSpecify = findViewById(R.id.genderSpecify);
 
         genderSpecify.setText(user_data.get("genderSpecify"));
         genderSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                EditText genderSpecify = (EditText) findViewById(R.id.genderSpecify);
+                EditText genderSpecify = findViewById(R.id.genderSpecify);
                 if(genderSpin.getItemAtPosition(position).toString().equals(genderIdentity[2])){
                     genderSpecify.setVisibility(View.VISIBLE);
                 }
@@ -98,16 +108,21 @@ public class personalInformation extends AppCompatActivity {
         });
 
 
-        Button nextBtn2 = (Button) findViewById(R.id.saveBtn);
+        nextBtn2 = findViewById(R.id.saveBtn);
 
         nextBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText nameEdit = (EditText) findViewById(R.id.yourNameEdit);
+                EditText nameEdit = findViewById(R.id.yourNameEdit);
                 String name = nameEdit.getText().toString();
-                EditText dateEdit = (EditText) findViewById(R.id.dateEdit);
-                EditText genderSpec = (EditText) findViewById(R.id.genderSpecify);
+                EditText dateEdit = findViewById(R.id.dateEdit);
+                EditText genderSpec = findViewById(R.id.genderSpecify);
                 String wholeDate = dateEdit.getText().toString();
+
+                if(wholeDate.isEmpty()){
+                    Toast.makeText(personalInformation.this, "Date cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 String[] tokens = wholeDate.split("/");
                 String year = tokens[2];
@@ -117,13 +132,19 @@ public class personalInformation extends AppCompatActivity {
                 String pronoun = pronounSpin.getSelectedItem().toString();
                 String genderSp = genderSpec.getText().toString();
 
-                startSavingData("name", name, false);
+                if(!startSavingData("name", name, false)){
+                    Toast.makeText(personalInformation.this, "Illegal character in name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 startSavingData("year",year, true);
                 startSavingData("month",month, true);
                 startSavingData("day",day, true);
                 if(!genderSp.isEmpty()){
                     startSavingData("gender", Integer.toString(genderSpin.getSelectedItemPosition()), true);
-                    startSavingData("genderSpecify",genderSp, true);
+                    if(!startSavingData("genderSpecify",genderSp, true)){
+                        Toast.makeText(personalInformation.this, "Illegal character in gender specification", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                 }
                 else{
                     startSavingData("gender",Integer.toString(genderSpin.getSelectedItemPosition()), true);
@@ -174,8 +195,11 @@ public class personalInformation extends AppCompatActivity {
 
 
 
-    private void startSavingData(String key, String text, boolean append){
+    private boolean startSavingData(String key, String text, boolean append){
 
+        if(io.containsIllegalChars(key) || io.containsIllegalChars(text)){
+            return false;
+        }
 
         try {
 
@@ -200,6 +224,8 @@ public class personalInformation extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "Could not save data.", Toast.LENGTH_SHORT).show();
         }
+
+        return true;
     }
 
 

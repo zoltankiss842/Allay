@@ -78,9 +78,15 @@ public class firstTimeOpening extends AppCompatActivity {
                     return;
                 }
                 else{
-                    startSavingData("name", name);
-                    startNextScreen();
-                    finish();
+                    if(startSavingData("name", name)){
+                        startNextScreen();
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(firstTimeOpening.this, "Illegal character in name", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                 }
             }
         });
@@ -118,7 +124,11 @@ public class firstTimeOpening extends AppCompatActivity {
     }
 
 
-    private void startSavingData(String key, String text){
+    private boolean startSavingData(String key, String text){
+
+        if(io.containsIllegalChars(key) || io.containsIllegalChars(text)){
+            return false;
+        }
 
         try {
             File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Soothe");
@@ -139,5 +149,7 @@ public class firstTimeOpening extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "Could not save data.", Toast.LENGTH_SHORT).show();
         }
+
+        return true;
     }
 }

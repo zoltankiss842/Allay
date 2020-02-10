@@ -21,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private HashMap<String, String> userData = new HashMap<>();
     private IO io = new IO();
 
+    private CardView perInf;
+    private CardView checkUp;
+    private CardView professionalContact;
+    private CardView chatWithOthers;
+    private CardView sleepSleep;
+    private CardView aboutInfo;
+
+
     public HashMap<String, String> getUserData() {
         return userData;
     }
@@ -35,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean("firstStart", true);
 
+        // Gets the modified HashMap from personalInfo
         Intent intent = getIntent();
         if(intent.hasExtra("modified_map")){
             userData = (HashMap<String, String>) intent.getSerializableExtra("modified_map");
@@ -45,25 +54,16 @@ public class MainActivity extends AppCompatActivity {
             showFirstTime();
         }
         else{
-            File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Soothe" + File.separator + "user_data.txt");
-            String path_to = path.toString();
-            try {
-                io.readData(path_to, userData);
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
-            if(Build.VERSION.SDK_INT >= 24){
-                setContentView(R.layout.activity_main);
-            }
-            else{
-                setContentView(R.layout.activity_main_v21);
-            }
 
-            TextView helloThereUser = (TextView) findViewById(R.id.helloThereUser);
+            readUserData();     // Read user_data.txt
+
+            showActivity();     // Shows the right Activity
+
+            TextView helloThereUser = findViewById(R.id.helloThereUser);
             helloThereUser.setText("Hello there " + userData.get("name"));
 
-            final CardView perInf = (CardView) findViewById(R.id.personalInfo);
+            // Listeners for the icons
+            perInf = findViewById(R.id.personalInfo);
             perInf.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            final CardView checkUp = (CardView) findViewById(R.id.checkUp);
+            checkUp = findViewById(R.id.checkUp);
             checkUp.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            final CardView professionalContact = (CardView) findViewById(R.id.professionalContact);
+            professionalContact = findViewById(R.id.professionalContact);
             professionalContact.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            final CardView chatWithOthers = (CardView) findViewById(R.id.chatWithOthers);
+            chatWithOthers = findViewById(R.id.chatWithOthers);
             chatWithOthers.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            final CardView sleepSleep = (CardView) findViewById(R.id.sleepSleep);
+            sleepSleep = findViewById(R.id.sleepSleep);
             sleepSleep.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            final CardView aboutInfo = (CardView) findViewById(R.id.aboutInfo);
+            aboutInfo = findViewById(R.id.aboutInfo);
             aboutInfo.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
@@ -219,4 +219,25 @@ public class MainActivity extends AppCompatActivity {
         editor.putBoolean("firstStart", false);
         editor.apply();
     }
+
+    private void readUserData(){
+        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Soothe" + File.separator + "user_data.txt");
+        String path_to = path.toString();
+        try {
+            io.readData(path_to, userData);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void showActivity(){
+        if(Build.VERSION.SDK_INT >= 24){
+            setContentView(R.layout.activity_main);
+        }
+        else{
+            setContentView(R.layout.activity_main_v21);
+        }
+    }
+
 }

@@ -20,8 +20,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Date;
 
 public class firstTimeOpening2 extends AppCompatActivity {
 
@@ -46,33 +49,37 @@ public class firstTimeOpening2 extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener dateListener;
     private String name;
     private IO io = new IO();
+    private EditText dateEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_time_opening2);
 
-        ConstraintLayout cl = (ConstraintLayout) findViewById(R.id.layout);
+        ConstraintLayout cl = findViewById(R.id.layout);
         AnimationDrawable ad = (AnimationDrawable) cl.getBackground();
         ad.setEnterFadeDuration(4000);
         ad.setExitFadeDuration(4000);
         ad.start();
 
         if(getIntent().hasExtra("com.example.soothe2.FIRST2")){
-            TextView namefTO = (TextView) findViewById(R.id.namefTO);
+            TextView namefTO = findViewById(R.id.namefTO);
             name = getIntent().getExtras().getString("com.example.soothe2.FIRST2");
             namefTO.setText(name);
         }
 
-        EditText genderSpecify = (EditText) findViewById(R.id.genderSpecify);
+        dateEdit = findViewById(R.id.dateEdit);
+
+
+        EditText genderSpecify = findViewById(R.id.genderSpecify);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, genderIdentity);
-        final Spinner genderSpin = (Spinner) findViewById(R.id.genderSpin);
+        final Spinner genderSpin = findViewById(R.id.genderSpin);
         genderSpin.setAdapter(adapter);
         genderSpin.setSelection(0);
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, genderPronouns);
-        final Spinner pronounSpin = (Spinner) findViewById(R.id.pronounSpin);
+        final Spinner pronounSpin = findViewById(R.id.pronounSpin);
         pronounSpin.setAdapter(adapter2);
         pronounSpin.setSelection(0);
 
@@ -83,7 +90,7 @@ public class firstTimeOpening2 extends AppCompatActivity {
         genderSpin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                EditText genderSpecify = (EditText) findViewById(R.id.genderSpecify);
+                EditText genderSpecify = findViewById(R.id.genderSpecify);
                 if(genderSpin.getItemAtPosition(position).toString().equals(genderIdentity[2])){
                    genderSpecify.setVisibility(View.VISIBLE);
                 }
@@ -98,14 +105,18 @@ public class firstTimeOpening2 extends AppCompatActivity {
             }
         });
 
-        Button nextBtn2 = (Button) findViewById(R.id.saveBtn);
+        Button nextBtn2 = findViewById(R.id.saveBtn);
 
         nextBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText dateEdit = (EditText) findViewById(R.id.dateEdit);
-                EditText genderSpec = (EditText) findViewById(R.id.genderSpecify);
+                EditText dateEdit = findViewById(R.id.dateEdit);
+                EditText genderSpec = findViewById(R.id.genderSpecify);
                 String wholeDate = dateEdit.getText().toString();
+                if(wholeDate.isEmpty()){
+                    Toast.makeText(firstTimeOpening2.this, "Date cannot be empty!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 String[] tokens = wholeDate.split("/");
                 String year = tokens[2];
@@ -136,12 +147,12 @@ public class firstTimeOpening2 extends AppCompatActivity {
             }
         });
 
-        final EditText dateEdit = (EditText) findViewById(R.id.dateEdit);
         final Calendar cal = Calendar.getInstance();
 
         dateListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
 
                 cal.set(Calendar.YEAR, year);
                 cal.set(Calendar.MONTH, month);
@@ -153,7 +164,13 @@ public class firstTimeOpening2 extends AppCompatActivity {
         dateEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(firstTimeOpening2.this, dateListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show();
+                DatePickerDialog datePickDiag = new DatePickerDialog(firstTimeOpening2.this, dateListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+
+                long maxDate = System.currentTimeMillis() - 999999999;
+
+                datePickDiag.getDatePicker().setMaxDate(maxDate);
+
+                datePickDiag.show();
             }
         });
 
@@ -166,6 +183,7 @@ public class firstTimeOpening2 extends AppCompatActivity {
 
         dateEdit.setText(sdf.format(cal.getTime()));
     }
+
 
 
 

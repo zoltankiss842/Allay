@@ -42,7 +42,7 @@
         android:layout_height="35dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="When did you born?"
+        android:text="When were you born?"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

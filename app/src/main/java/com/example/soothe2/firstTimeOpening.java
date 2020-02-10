@@ -32,15 +32,22 @@ public class firstTimeOpening extends AppCompatActivity {
     private String name = "";                                   // User name stored in here
     private IO io = new IO();
 
+    private ConstraintLayout cl;                                // Background animation
+    private AnimationDrawable ad;                               // Background animation
+
+    private TextView sootheTitle;
+    private TextView quote;
+    private Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Vegan.ttf");
+
+    private Button nextBtn;
+    private EditText nameInput;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_time_opening);
-        ConstraintLayout cl = (ConstraintLayout) findViewById(R.id.layout);
-        AnimationDrawable ad = (AnimationDrawable) cl.getBackground();
-        ad.setEnterFadeDuration(4000);
-        ad.setExitFadeDuration(4000);
-        ad.start();
+
+        animationStart();   // Fading starts
 
         // Checks the storage permission
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
@@ -51,24 +58,24 @@ public class firstTimeOpening extends AppCompatActivity {
         }
 
         // Changes the title and the quote to Vegan font
-        TextView sootheTitle = (TextView) findViewById(R.id.sootheTitle);
-        TextView quote = (TextView) findViewById(R.id.quoteText);
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Vegan.ttf");
+        sootheTitle = findViewById(R.id.sootheTitle);
+        quote = findViewById(R.id.quoteText);
         sootheTitle.setTypeface(typeface);
         quote.setTypeface(typeface);
 
         // Initializes the listener for the button
-        Button nextBtn = (Button) findViewById(R.id.nextBtn);
+        nextBtn = findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                EditText nameInput = (EditText) findViewById(R.id.enterName);       //Gets the input from the EditText
+                nameInput = findViewById(R.id.enterName);       //Gets the input from the EditText
                 name = nameInput.getText().toString();
                 name = name.trim();
 
                 if(name.length() == 0){
                     nameEmptyToast();
+                    return;
                 }
                 else{
                     startSavingData("name", name);
@@ -90,6 +97,14 @@ public class firstTimeOpening extends AppCompatActivity {
                 Toast.makeText(this, "STORAGE permission denied", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private void animationStart(){
+        cl = findViewById(R.id.layout);
+        ad = (AnimationDrawable) cl.getBackground();
+        ad.setEnterFadeDuration(4000);
+        ad.setExitFadeDuration(4000);
+        ad.start();
     }
 
     private void startNextScreen(){ //Starts firstTimeOpening2

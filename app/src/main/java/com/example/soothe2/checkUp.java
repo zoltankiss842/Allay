@@ -9,17 +9,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class checkUp extends AppCompatActivity {
 
+    private Button startBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_up);
 
-        Button startBtn = (Button) findViewById(R.id.startButton);
+        // Initializing variables
+        startBtn = findViewById(R.id.startButton);
+
+        // Starting the Questions
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(checkUp.this, questionsActivity.class));
             }
         });
+
+        // TODO Previous results and graph of progress
     }
 }

@@ -11,18 +11,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class aboutInfo extends AppCompatActivity {
 
+    private ImageView mySelf;
+    private ImageView stress;
+    private ImageView calmME;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_info);
 
-        ImageView mySelf = (ImageView) findViewById(R.id.myPossibleSelf);
-        ImageView stress = (ImageView) findViewById(R.id.stress);
-        ImageView calmME = (ImageView) findViewById(R.id.calmME);
+        // Initializing variables
+        mySelf = findViewById(R.id.myPossibleSelf);
+        stress = findViewById(R.id.stress);
+        calmME = findViewById(R.id.calmME);
 
         calmME.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {   // If there is know Google Play on phone, then it opens up in a webpage
                 try{
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("market://details?id=uk.org.stem4.calmharm")));
@@ -36,7 +41,7 @@ public class aboutInfo extends AppCompatActivity {
 
         stress.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {   // If there is know Google Play on phone, then it opens up in a webpage
                 try{
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("market://details?id=com.companionapps.anxietycompanion")));
@@ -50,7 +55,7 @@ public class aboutInfo extends AppCompatActivity {
 
         mySelf.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {   // If there is know Google Play on phone, then it opens up in a webpage
                 try{
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("market://details?id=com.mypossibleself.app")));

@@ -1,0 +1,54 @@
+1#I think that overall, people find me boring to talk to.
+1#I mess up everything I touch.
+1#I feel devastated when someone criticizes me.
+1#If someone ever falls in love with me, I better do my best to prove myself worthy, because it may never happen again.
+1#I could disappear from the surface of the earth and nobody would notice or care.
+1#I feel as though I let those I care about down.
+1#I will never amount to anything or anyone significant.
+1#When someone criticizes me, I can't help but feel that I really am incompetent.
+1#I have what it takes to socialize with other people.
+1#I think I am a failure.
+1#I feel as though I am not good enough for those who care about me.
+1#People will only respect me if I'm good-looking and/or successful.
+1#If I don't do as well as others, it means that I am an inferior person.
+1#Realizing that criticism towards me is justified makes me feel like a failure.
+1#How I feel about myself is more important than others' opinions of me.
+1#Being myself guarantees that people will dislike me.
+1#I will never be as skilled or as smart as I should be.
+1#I deserve to be loved and respected.
+1#It's important to me to be liked by everyone I meet.
+1#Someone who stands up to me or disagrees with me may still very well like and respect me.
+1#When people point out my mistakes, I feel like they are degrading me.
+2#I am not confident I've done a good job unless someone else points it out.
+2#I am afraid of being rejected by my friends.
+2#I like myself.
+2#I constantly ask those I care about whether they love me.
+2#I avoid having arguments with others because I don't want them to get angry or dislike me.
+2#I modify my personality, opinions, or appearance in order to be accepted by others.
+2#Unlike others, I really have to go out of my way to make and keep a friend.
+2#In case of need, I know people who care enough about me to offer their help.
+2#I get discouraged when someone tells me I haven't done my best.
+3#I feel worthless and useless.
+3#Before making any decision, I ask other people if I'm doing the right thing.
+3#I fall short of my expectations.
+3#When someone rejects my ideas, I feel insulted.
+4#I was very anxious, worried or scared about a lot of things in my life.
+4#I felt my worry was out of control.
+4#I felt restless, agitated, frantic or tense.
+5#My heart would skip a beat, was pounding or my heart rate increased.
+5#I was sweating profusely.
+5#My hands, legs or entire body were shaking, trembling or felt tingly.
+5#I had difficulty breathing or swallowing.
+5#I had pain in my chest almost like I was having a heart attack.
+5#I felt sick to my stomach.
+5#I felt dizzy, my head was spinning or felt like I was going to faint.
+5#I had cold or hot flashes.
+5#I was scared that I would lose control, go crazy or die.
+6#How frequently did you experience panic attacks?
+7#Did you purposely avoid situations or activities in which might experience a panic attack?
+7#Directly - I was a victim of a traumatic event.
+7#I witnessed it in person (happening to someone else).
+7#I learned about it happening to a close family member or friend.
+7#I was exposed to is as a result of my job.
+7#I am haunted by memories, flashbacks or nightmares about the event.
+7#I lost trust in humanity and myself and began expecting the worst of others and of situations.

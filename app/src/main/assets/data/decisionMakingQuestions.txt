@@ -1,0 +1,43 @@
+1#Whatever plans you make, there is always something unexpected that will interfere with them.
+1#I can minimize the consequences of risk-taking by planning ahead and preparing for each outcome.
+1#Others consider my lifestyle wild and exciting.
+1#I have control over the outcome of my work, even if the project is difficult or demanding.
+1#Rules are meant to be broken.
+1#I like my music loud and crazy rather than soft and serene.
+1#I am willing to take a chance at failure for the sake of innovation.
+1#I would take a risk if there were something in it for me.
+1#At an amusement park, I automatically gravitate toward the highest, fastest, most intense rides.
+1#You cannot fool your destiny.
+4#Potential negative consequences keep me from taking action.
+4#Before making a decision, I try to anticipate the factors that could influence the outcome.
+4#I am a "chicken".
+4#I am afraid that something unexpected might ruin all my plans.
+4#I check important projects carefully for mistakes before submitting them.
+4#Before making a risky business decision, I do some research to determine whether it's the right path to take.
+4#Before making a final decision, I make sure to have a Plan B in case something goes wrong.
+4#I consider the pros and cons of a decision before I proceed.
+4#I remain calm and relaxed in situations in which most people would become fearful, upset, or stressed.
+4#Given the choice, I would prefer to defer risky decisions to others.
+4#I_____ look for ways to spice up my daily routine.
+4#Others tell me that my actions are "crazy".
+4#I realize that past actions were more dangerous than I thought at the time.
+2#I will take a greater risk for a greater potential payoff.
+2#I am uncomfortable in unfamiliar situations.
+2#I don't notice little details.
+2#I feel uneasy when I have to make a decision with an uncertain outcome.
+2#I can't stand repetitive tasks at work.
+2#I remain optimistic during stressful times.
+2#I avoid working on projects at work that could fail.
+2#I don't submit a project until it's perfect.
+2#It bores me to know in advance what will happen at work.
+2#The best way to motivate me to take a risk is to offer an appealing reward.
+2#I jump into new situations without much thought.
+2#I lose confidence when there is a chance that my project will fail.
+2#When things get crazy at work, I can't stop obsessing over what could go wrong.
+2#I'm willing to take a risk in order to get what I want.
+2#To perform well, I need to know the outcome of my work in advance.
+2#When I make a risky decision, I plan for the worst-case scenario.
+2#My worry holds me back in life.
+2#Chance has a lot to do with being successful.
+2#If I take a risk and fail, I can handle the consequences.
+2#I will take a bigger risk if there is a reward at stake (i.e. money or recognition).

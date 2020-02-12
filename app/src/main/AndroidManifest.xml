@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/feather"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".questionsActivity"></activity>
+        <activity android:name=".questionsActivity" />
         <activity android:name=".aboutInfo" />
         <activity android:name=".sleepSleep" />
         <activity android:name=".chatWithOthers" />

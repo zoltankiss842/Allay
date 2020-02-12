@@ -1,0 +1,7 @@
+1#Strongly agree#Agree#Somewhat agree or disagree#Disagree#Strongly disagree
+2#Completely true#Mostly true#Somewhat true or false#Mostly false#Completely false
+3#Most of the time#Often#Sometimes#Rarely#Almost never
+4#Never#A few times#Sometimes#Often#Constantly
+5#Not at all#Mild#Moderate#Severe
+6#Never#Less than a few times a week#A few times a week#Once or twice a day#Several times a day
+7#Yes#No

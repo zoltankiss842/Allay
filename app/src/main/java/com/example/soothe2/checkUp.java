@@ -28,5 +28,7 @@ public class checkUp extends AppCompatActivity {
         });
 
         // TODO Previous results and graph of progress
+
+
     }
 }

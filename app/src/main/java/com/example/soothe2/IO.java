@@ -52,7 +52,7 @@ public class IO {
 
     }
 
-    public void readData(String path, HashMap<String, String> map) throws Exception {
+    public void readDataStringKey(String path, HashMap<String, String> map) throws Exception {
         BufferedReader objReader = null;
         try{
 
@@ -63,6 +63,37 @@ public class IO {
             while((line = objReader.readLine()) != null){
                 String[] tokens = line.split("#");
                 map.put(tokens[0], tokens[1]);
+            }
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try {
+                if(objReader != null){
+                    objReader.close();
+                }
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    public void readDataIntegerKey(String path, HashMap<Integer, String> map) throws Exception {
+        BufferedReader objReader = null;
+        try{
+
+            // TODO Have to remove # on key and text
+            objReader = new BufferedReader(new FileReader(path));
+
+            String line;
+            while((line = objReader.readLine()) != null){
+                String[] tokens = line.split("#");
+                map.put(Integer.parseInt(tokens[0]), tokens[1]);
             }
 
         }

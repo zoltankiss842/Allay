@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Soothe" + File.separator + "user_data.txt");
         String path_to = path.toString();
         try {
-            io.readData(path_to, userData);
+            io.readDataStringKey(path_to, userData);
         }
         catch (Exception e){
             e.printStackTrace();

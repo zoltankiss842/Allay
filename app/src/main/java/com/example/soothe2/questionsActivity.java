@@ -219,6 +219,7 @@ public class questionsActivity extends AppCompatActivity {
         }
 
         //TODO return array to checkUp and make a graph
+        //TODO How to make graph
         return array;
     }
 }

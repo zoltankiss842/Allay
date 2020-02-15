@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.soothe2">
+    package="com.example.allay">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,6 +13,11 @@
         android:roundIcon="@mipmap/feather"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".currentPatients"></activity>
+        <activity android:name=".professionalPersonalInformation" />
+        <activity android:name=".professionalMainActivityScreen" />
+        <activity android:name=".professionalLoginScreen" />
+        <activity android:name=".loginType" />
         <activity android:name=".questionsActivity" />
         <activity android:name=".aboutInfo" />
         <activity android:name=".sleepSleep" />

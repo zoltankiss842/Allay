@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_main"
+    tools:context=".professionalMainActivityScreen">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Good Morning Jane Doe"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <ImageButton
+        android:id="@+id/profPersonalInfo"
+        android:layout_width="145dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:background="@drawable/roundcorner"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/currPatients"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.107"
+        app:srcCompat="@drawable/personal_info" />
+
+    <ImageButton
+        android:id="@+id/sessionRequest"
+        android:layout_width="145dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:background="@drawable/roundcorner"
+        android:padding="30dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/currPatients"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profPersonalInfo"
+        app:layout_constraintVertical_bias="0.065"
+        app:srcCompat="@drawable/discuss" />
+
+    <ImageButton
+        android:id="@+id/currPatients"
+        android:layout_width="145dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginLeft="216dp"
+        android:background="@drawable/roundcorner"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.109"
+        app:srcCompat="@drawable/group" />
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="145dp"
+        android:layout_height="140dp"
+        android:background="@drawable/roundcorner"
+        android:padding="30dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toEndOf="@+id/sessionRequest"
+        app:layout_constraintTop_toBottomOf="@+id/currPatients"
+        app:layout_constraintVertical_bias="0.065"
+        app:srcCompat="@drawable/info" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personal Info"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/profPersonalInfo"
+        app:layout_constraintEnd_toEndOf="@+id/profPersonalInfo"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/profPersonalInfo"
+        app:layout_constraintTop_toTopOf="@+id/profPersonalInfo"
+        app:layout_constraintVertical_bias="0.925" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current patients"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/currPatients"
+        app:layout_constraintEnd_toEndOf="@+id/currPatients"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/currPatients"
+        app:layout_constraintTop_toTopOf="@+id/currPatients"
+        app:layout_constraintVertical_bias="0.925" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request 1-to-1 session"
+        android:textColor="@android:color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/sessionRequest"
+        app:layout_constraintEnd_toEndOf="@+id/sessionRequest"
+        app:layout_constraintStart_toStartOf="@+id/sessionRequest"
+        app:layout_constraintTop_toTopOf="@+id/sessionRequest"
+        app:layout_constraintVertical_bias="0.933" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Information"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/infoButton"
+        app:layout_constraintEnd_toEndOf="@+id/infoButton"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/infoButton"
+        app:layout_constraintTop_toTopOf="@+id/infoButton"
+        app:layout_constraintVertical_bias="0.933" />
+</androidx.constraintlayout.widget.ConstraintLayout>

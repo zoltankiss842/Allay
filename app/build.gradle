@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.example.soothe2"
+        applicationId "com.example.allay"
         minSdkVersion 14
         targetSdkVersion 29
         versionCode 1
@@ -30,4 +30,5 @@ dependencies {
     implementation files('libs/CircleImageView-master/gradle/wrapper/gradle-wrapper.jar')
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.mikhaellopez:circularimageview:3.2.0'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 }

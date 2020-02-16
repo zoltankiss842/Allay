@@ -91,4 +91,24 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+
+    <string name="descriptionOfProf">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut libero at sapien pharetra sodales eget et orci.
+        Nunc ullamcorper neque at vulputate interdum. Suspendisse tincidunt tortor orci, ut venenatis turpis viverra at. Sed a felis mi.
+        Vivamus maximus ligula a orci maximus hendrerit. Etiam auctor lectus ut ante tristique mollis. Integer lacus felis, maximus eu tellus quis, malesuada fringilla nisl.
+        Curabitur vitae ante pretium, mattis odio ut, suscipit justo. Pellentesque luctus aliquet pellentesque. Nam et nunc fermentum, imperdiet nisl eget, congue nulla.
+        Donec interdum ac massa non sollicitudin.
+        Vestibulum tempor interdum mi, et tristique magna rhoncus vitae. Donec at tortor erat. In laoreet sem quis neque maximus placerat. Pellentesque quis faucibus elit.
+        Integer vestibulum arcu quis nunc imperdiet hendrerit. Etiam bibendum augue urna, ut molestie ipsum suscipit sit amet. Aenean et lacus vel tellus vulputate mollis eget id tortor.
+        Suspendisse ut purus pellentesque, tristique libero et, accumsan nunc. Nunc vulputate nibh vel dignissim vehicula."
+    </string>
+
+    <string name="letsSleepText"> "After pressing the button, the microphone will switch on and starts recording. The mic will pick up any noise during your sleep and displaying it to you, when you wake up.
+
+        The recordings are stored only on your phone and after reviewing them, you can choose to delete them or put it in the archive.
+
+        For a better experience, you should connect your fitness tracker or smart bracelet"
+    </string>
+
+
 </resources>

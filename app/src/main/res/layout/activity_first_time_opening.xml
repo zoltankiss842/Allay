@@ -11,10 +11,10 @@
     <TextView
         android:id="@+id/sootheTitle"
         android:layout_width="0dp"
-        android:layout_height="115dp"
+        android:layout_height="180dp"
         android:gravity="center"
         android:lineSpacingExtra="24sp"
-        android:text="Soothe"
+        android:text="Allay"
         android:textColor="#FFFFFF"
         android:textSize="68sp"
         android:textStyle="bold"

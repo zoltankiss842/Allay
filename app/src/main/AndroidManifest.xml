@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,16 @@
         android:roundIcon="@mipmap/feather"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".currentPatients"></activity>
+        <activity android:name=".logADream"></activity>
+        <activity android:name=".trackSleepManually" />
+        <activity android:name=".dreamLog" />
+        <activity android:name=".letsSleep" />
+        <activity android:name=".professionalCharlotte" />
+        <activity android:name=".professionalHarold" />
+        <activity android:name=".professionalAva" />
+        <activity android:name=".professionalEmma" />
+        <activity android:name=".professionalJake" />
+        <activity android:name=".currentPatients" />
         <activity android:name=".professionalPersonalInformation" />
         <activity android:name=".professionalMainActivityScreen" />
         <activity android:name=".professionalLoginScreen" />

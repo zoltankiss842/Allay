@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_main"
+    tools:context=".trackSleepManually">
+
+    <LinearLayout
+        android:id="@+id/gotoBedDescCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/gotoBedDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Went ot bed ..."/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gotoBedCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gotoBedDescCont"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/gotoBed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Went ot bed ..." />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wakeupDescCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gotoBedCont"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/wakeupDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Woke up at..."/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wakeupCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wakeupDescCont"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/wakeUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Went to bed..." />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/commentsCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wakeupCont"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:padding="20dp"
+        >
+
+        <EditText
+            android:id="@+id/comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundcorner_bordered"
+            android:hint="Additional comments..."/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commentsCont"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:padding="20dp"
+        >
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

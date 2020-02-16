@@ -174,9 +174,11 @@ public class firstTimeOpening2 extends AppCompatActivity {
             public void onClick(View v) {
                 // Here we set the limits of the calendar
                 DatePickerDialog datePickDiag = new DatePickerDialog(firstTimeOpening2.this, dateListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
-                // TODO setMinDate as well
-                long maxDate = System.currentTimeMillis() - 999999999; // TODO implement actual method
+                TimeConversion tc = new TimeConversion();
+                long maxDate = System.currentTimeMillis() - tc.convertYearToMillis(12);
+                long minDate = tc.convertYearToMillis(100) - System.currentTimeMillis();
                 datePickDiag.getDatePicker().setMaxDate(maxDate);
+                datePickDiag.getDatePicker().setMinDate(minDate);
                 datePickDiag.show();
             }
         });

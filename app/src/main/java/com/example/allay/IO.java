@@ -99,6 +99,39 @@ public class IO {
 
     }
 
+    public String readDataReturnString(File path, String text) throws Exception {
+        BufferedReader objReader = null;
+        String line = "";
+        try{
+
+            // TODO Have to remove # on key and text
+            objReader = new BufferedReader(new FileReader(path));
+
+
+            while((line = objReader.readLine()) != null){
+                return line;
+            }
+
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+            try {
+                if(objReader != null){
+                    objReader.close();
+                }
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+            return line;
+        }
+
+    }
+
 
     public void readDataStringKey(String path, HashMap<String, String> map) throws Exception {
         BufferedReader objReader = null;

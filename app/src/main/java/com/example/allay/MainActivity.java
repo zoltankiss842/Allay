@@ -48,10 +48,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        String isPatient = "";
-        isPatient = readPatientStatus(isPatient);
-
-        if(isPatient.equals("false")){
+        if(readPatientStatus().equals("false")){
             showProfessionScreen();
             finish();
         }
@@ -229,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readUserData(){
-        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Soothe" + File.separator + "user_data.txt");
+        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Allay" + File.separator + "user_data.txt");
         String path_to = path.toString();
         try {
             io.readDataStringKey(path_to, userData);
@@ -239,16 +236,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private String readPatientStatus(String status){
-        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Soothe" + File.separator + "is_patient.txt");
+    private String readPatientStatus(){
+        String temp = "";
+        File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Allay" + File.separator + "is_patient.txt");
         try {
-            io.readData(path, status);
+            temp = io.readDataReturnString(path, temp);
         }
         catch (Exception e){
             e.printStackTrace();
         }
 
-        return status;
+        return temp;
     }
 
     private void showActivity(){

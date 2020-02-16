@@ -12,8 +12,6 @@
         android:id="@+id/image"
         android:layout_width="158dp"
         android:layout_height="94dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
         android:src="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

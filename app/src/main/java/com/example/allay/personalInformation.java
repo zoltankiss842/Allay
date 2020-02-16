@@ -179,7 +179,14 @@ public class personalInformation extends AppCompatActivity {
         dateEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(personalInformation.this, dateListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show();
+                DatePickerDialog datePickDiag = new DatePickerDialog(personalInformation.this, dateListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
+                TimeConversion tc = new TimeConversion();
+                long maxDate = System.currentTimeMillis() - tc.convertYearToMillis(12);
+                long minDate = tc.convertYearToMillis(100) - System.currentTimeMillis();
+                datePickDiag.getDatePicker().setMaxDate(maxDate);
+                datePickDiag.getDatePicker().setMinDate(minDate);
+                datePickDiag.show();
+
             }
         });
 

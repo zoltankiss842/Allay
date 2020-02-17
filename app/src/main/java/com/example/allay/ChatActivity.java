@@ -73,7 +73,7 @@ public class ChatActivity extends AppCompatActivity {
         imageOfUser = findViewById(R.id.userImage);
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage(imageOfOtherUser, imageOfUser, options);
-        companionLabel.setText(nameOfOtherUser);
+        companionLabel.setText(nameOfOtherUser); // jh
 
         loadDummyHistory();
 

@@ -14,7 +14,9 @@
         android:roundIcon="@mipmap/allay_logo_trans"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".logADream"></activity>
+        <activity android:name=".ChatMessage"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".logADream" />
         <activity android:name=".trackSleepManually" />
         <activity android:name=".dreamLog" />
         <activity android:name=".letsSleep" />

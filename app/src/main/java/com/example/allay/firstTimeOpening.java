@@ -134,6 +134,7 @@ public class firstTimeOpening extends AppCompatActivity {
         try {
             File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Allay");
             if(!path.exists()){
+                path.mkdirs();
 //                Toast.makeText(this, (path.mkdirs() ? "Directory has been created" : "Directory not created"),Toast.LENGTH_SHORT).show();
             }
             else{

@@ -98,10 +98,10 @@ public class firstTimeOpening extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == STORAGE_PERMISSION_CODE){
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this, "STORAGE permission granted", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "STORAGE permission granted", Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(this, "STORAGE permission denied", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "STORAGE permission denied", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -134,16 +134,16 @@ public class firstTimeOpening extends AppCompatActivity {
         try {
             File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Allay");
             if(!path.exists()){
-                Toast.makeText(this, (path.mkdirs() ? "Directory has been created" : "Directory not created"),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, (path.mkdirs() ? "Directory has been created" : "Directory not created"),Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(this, "Directory exists", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Directory exists", Toast.LENGTH_SHORT).show();
             }
             String fileName = "user_data.txt";
 
             io.saveData(fileName, path, key, name);
 
-            Toast.makeText(this, "Saved to: " + path, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Saved to: " + path, Toast.LENGTH_SHORT).show();
 
         }
         catch (Exception e){

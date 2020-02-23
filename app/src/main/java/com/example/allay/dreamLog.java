@@ -76,10 +76,10 @@ public class dreamLog extends AppCompatActivity {
 
             File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Allay");
             if(!path.exists()){
-                Toast.makeText(this,"No entries yet...",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this,"No entries yet...",Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(this, "Directory exists", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Directory exists", Toast.LENGTH_SHORT).show();
             }
 
             String fileName = "dream_log.txt";
@@ -88,7 +88,7 @@ public class dreamLog extends AppCompatActivity {
 
             io.readDataStringKey(file.toString(),map);
 
-            Toast.makeText(this, "Read from: " + path, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Read from: " + path, Toast.LENGTH_SHORT).show();
 
         }
         catch (Exception e){

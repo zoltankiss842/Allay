@@ -206,10 +206,10 @@ public class firstTimeOpening2 extends AppCompatActivity {
 
             File path = new File(Environment.getExternalStorageDirectory() + File.separator + "Allay");
             if(!path.exists()){
-                Toast.makeText(this, (path.mkdirs() ? "Directory has been created" : "Directory not created"),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, (path.mkdirs() ? "Directory has been created" : "Directory not created"),Toast.LENGTH_SHORT).show();
             }
             else{
-                Toast.makeText(this, "Directory exists", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Directory exists", Toast.LENGTH_SHORT).show();
             }
 
             String fileName = "user_data.txt";
@@ -218,7 +218,7 @@ public class firstTimeOpening2 extends AppCompatActivity {
 
             io.saveData(fileName,path,key,text);
 
-            Toast.makeText(this, "Saved to: " + path, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Saved to: " + path, Toast.LENGTH_SHORT).show();
 
         }
         catch (Exception e){
